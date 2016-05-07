@@ -1,0 +1,11 @@
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\BLLInvestorManagement.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\BLLInvestorManagement.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\Common.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\DAL.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\Model.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\Common.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\Model.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\bin\Debug\DAL.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\obj\Debug\ResolveAssemblyReference.cache
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\obj\Debug\BLLInvestorManagement.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLInvestorManagement\obj\Debug\BLLInvestorManagement.pdb

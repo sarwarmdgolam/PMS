@@ -1,0 +1,780 @@
+﻿a:visited
+{
+    color: Black;
+    /*text-decoration: underline;*/
+}
+a:link
+{
+    color: Black;
+    /*text-decoration: underline;*/
+}
+a:hover
+{
+    color: red;
+    /*text-decoration: underline;*/
+}
+body
+{
+    margin: auto;
+    font-family: Verdana, Arial;
+    font-size: small;
+    color: Black;
+    background-color:White; /*#FEE9D4;*/
+    /*background-image:url(../Images/body.gif);*/
+    background-repeat:no-repeat;  
+    background-position:center;
+     
+}
+table
+{
+	vertical-align:top;
+}
+tr
+{
+	padding-top:1px;
+}
+th
+{
+}
+td
+{
+}
+.td_MenuLink
+{
+	color:Black;
+	font-size: x-small;
+	text-decoration: none;
+	/*padding-top:100px;*/
+}
+input
+{
+    font-family: Verdana, Arial;
+    font-size: small;
+}
+select
+{
+    font-family: Verdana, Arial;
+    font-size: small;
+}
+/*******************************************************************************************/
+/* 
+	LM Default-styles
+*/
+/*******************************************************************************************/
+.LM_ErrorMessage
+{
+	color: Red;
+	font-weight: normal;
+}
+.LM_FieldLabel
+{
+	font-weight: normal;
+}
+.LM_FieldLabelReadOnly
+{
+	background-color:#E0E0E0;
+	border-style:solid;
+	border-width:1px;
+}
+.LM_FieldLabelTop
+{
+	font-weight: normal;
+	font-size: x-small;
+}
+.LM_FieldLabelHide
+{
+	display: none;
+}
+.LM_FormSection
+{
+	Font-Size: 12pt;
+	Font-Weight: Bold;
+	color: Black;
+}
+.LM_Login
+{
+	/*color: Blue;
+	font-weight: bold;
+	font-size: x-small;
+	text-decoration: none;*/
+	/*background-color:#B1CBEB;
+	border-color: #D6EFF7;*/
+	height:200px;
+	width:350px;
+	border-style:solid;
+	border-width:0px;
+	font-family: Verdana, Arial;
+	font-size: 10pt;
+	background-image:url(../Images/login2.gif);
+	
+}
+.LM_Logoff
+{
+	color: Red;
+	font-weight: bold;
+	font-size: x-small;
+	text-decoration: none;
+}
+.LM_PageTitle 
+{
+	color:Black;
+	font-size: large;
+	font-weight: bold;
+	font-family: Verdana, Arial;
+	font-size: 14pt;
+}
+.LM_MandatoryMark
+{
+	color: Red;
+}
+/*******************************************************************************************/
+/* 
+	LM_MenuLink
+*/
+/*******************************************************************************************/
+.LM_MenuLink
+{
+	color:Black;
+	font-size: x-small;
+	text-decoration:underline;
+	cursor: hand;
+}
+.LM_MenuLink:hover
+{
+    color: red;
+    text-decoration: underline;
+}
+
+/*******************************************************************************************/
+/* 
+	LM_MasterPage
+*/
+/*******************************************************************************************/
+.LM_MasterPageMenuCell
+{
+	width: 150px;
+	height: 668px;
+	background-color:#2E3091; /*#4FA2E4;  #79D4F6; D6DCEA;  128BC6 */
+	color:White;
+	font-weight:bold;
+	
+	
+}
+.LM_MasterPageDataCell
+{
+	padding-left: 10px ;
+	padding-right: 10px ;
+	width: 100%;
+	background-color:InfoBackground;
+}
+.LM_MasterPageTopCell
+{
+	width:100px;
+	height: 105px;
+	background-color: #FFFFFF;
+	padding-right: 0px;
+	background-image:url(~/MasterPage/Images/logo-images/ACML-Logo.gif);
+	background-repeat:repeat-y;
+}
+.LM_MasterPageAfterTopCell
+{
+	width: 100%;
+	height: 20px; 
+	background-color: #0156AB;
+	padding-right: 5px;
+	/*background-image:url(../Images/side_ber1.gif);*/
+	background-color:#8DC73E
+	
+}
+/*******************************************************************************************/
+/* 
+	LM_ListWithLinksClass
+*/
+/*******************************************************************************************/
+.LM_ListWithLinksClass a:visited
+{
+    color: White;
+    text-decoration: underline;
+}
+.LM_ListWithLinksClass a:link
+{
+    color: White;
+    text-decoration: underline;
+}
+.LM_ListWithLinksClass a:hover
+{
+    color: Red;
+    text-decoration: underline;
+}
+.LM_ListWithLinksClass.HeaderRow
+{
+    background-color: #6086B7;
+    color: Black;
+    font-weight: bold;
+	/*background-color: #a478a9;
+	color: White;*/
+}
+.LM_ListWithLinksClass.HeaderCell
+{
+	/*border-color: #DBECF5;
+	border-style: solid;
+	border-width: 1px;
+	
+	color: White;
+	font-size: large;
+	font-weight: bold;
+	font-family: Verdana, Arial;
+	font-size: 10pt;
+	*/
+	border-color: White;
+	border-style: solid;
+	border-width: 1px;
+}
+.LM_ListWithLinksClass.DataRowEven
+{
+    background-color: #DBECF5;
+}
+.LM_ListWithLinksClass .DataRowOdd
+{
+    background-color: #B1CBEB;
+}
+.LM_ListWithLinksClass .DataCell 
+{
+	border-color: White;
+	border-style: solid;
+	border-width: 1px;
+}
+.LM_ListWithLinksClass 
+{
+	border-color: White;
+	border-style: solid;
+	border-width: 0px;
+}
+.LM_ListWithLinksClass.GridHeaderCell 
+{
+	border-color: White;
+	border-style: solid;
+	border-width: 1px;
+	background-color: Blue;	
+}
+.LM_ListWithLinksItemClass
+{
+	border-color:White;
+	border-style:solid;
+}
+/*
+.LM_CheckBoxGroupType2Class,
+.LM_ListTable, 
+.LM_ListWithLinksClass, 
+.LM_ListWithCheckBoxClass, 
+.LM_TextBoxGroupType1Class
+{
+	border-color: #a478a9;
+	border-style: solid;
+	border-width: 2px;
+	border-collapse: collapse;
+}
+.LM_CheckBoxGroupType2Class .HeaderRow,
+.LM_ListHeaderRow,
+.LM_ListTable .HeaderRow,
+.LM_ListWithLinksClass .HeaderRow,
+.LM_ListWithCheckBoxClass .HeaderRow,
+.LM_TextBoxGroupType1Class .HeaderRow
+{
+	background-color: #a478a9;
+	color: White;
+}
+.LM_CheckBoxGroupType2Class .HeaderCell,
+.LM_ListHeaderCell,
+.LM_ListTable .HeaderCell,
+.LM_ListWithLinksClass .HeaderCell,
+.LM_ListWithCheckBoxClass .HeaderCell,
+.LM_TextBoxGroupType1Class .HeaderCell
+{
+	border-color: White;
+	border-style: solid;
+	border-width: 1px;
+}
+.LM_CheckBoxGroupType2Class .DataRowOdd,
+.LM_ListDataRowOdd,
+.LM_ListTable .DataRowOdd,
+.LM_ListWithLinksClass .DataRowOdd,
+.LM_ListWithCheckBoxClass .DataRowOdd,
+.LM_TextBoxGroupType1Class .DataRowOdd
+{
+	background-color: #7da3d1;
+}
+.LM_CheckBoxGroupType2Class .DataRowEven,
+.LM_ListDataRowEven,
+.LM_ListTable .DataRowEven,
+.LM_ListWithLinksClass .DataRowEven,
+.LM_ListWithCheckBoxClass .DataRowEven,
+.LM_TextBoxGroupType1Class .DataRowEven
+{
+	background-color: #8cc2b2;
+}
+.LM_CheckBoxGroupType2Class .DataCell,
+.LM_ListDataCell,
+.LM_ListTable .DataCell,
+.LM_ListWithLinksClass .DataCell,
+.LM_ListWithCheckBoxClass .DataCell,
+.LM_TextBoxGroupType1Class .DataCell
+{
+	border-color: White;
+	border-style: solid;
+	border-width: 1px;
+}*/
+/*	END  */
+
+/*******************************************************************************************/
+/* 
+	LM_HelpControlClass
+*/
+/*******************************************************************************************/
+a:active.LM_HelpControlClass  
+{
+	color:White;
+	text-decoration:none;
+	font-weight:bold;
+}
+a:visited.LM_HelpControlClass  
+{
+	color:Black;
+	text-decoration:none;
+	font-weight:bold;
+}
+a:link.LM_HelpControlClass 
+{
+	color:Black;
+	text-decoration:none;
+	font-weight:bold;
+}
+a:hover.LM_HelpControlClass  
+{
+	color:Black;
+	text-decoration:none;
+	font-weight:bold;
+}
+/*******************************************************************************************/
+/*
+	MasterTable
+*/
+/*******************************************************************************************/
+table.MasterTable
+{
+	width:100%;
+	text-align:left;
+	vertical-align:top;
+}
+th.MasterTable
+{
+}
+tr.MasterTable
+{
+}
+td.MasterTable
+{
+}
+.MasterTable th.PageTitle
+{
+	color:White;
+	background-color:#6086B7;
+	font-size: 18pt;
+	font-family: Verdana, Arial;
+	font-weight: bold;
+	vertical-align:middle;
+}
+.MasterTable th.UserInfo
+{
+	color:White;
+	background-color: #6086B7;
+	text-align:right;
+	vertical-align:bottom;
+	padding-right:10px;
+	vertical-align:middle;
+}
+.UserInfoLogin
+{
+	background-color: #6086B7;
+	text-align:right;
+	vertical-align:bottom;
+	padding-right:10px;
+	vertical-align:middle;
+}
+/*******************************************************************************************/
+/* 
+	Menu
+*/
+/*******************************************************************************************/
+.Menu A:visited
+{
+	color:White; /*#F2FA18;*/
+    text-decoration: none;
+}
+.Menu A:link
+{
+	color:White; /*#F2FA18;*/
+    text-decoration:none;
+}
+.Menu A:hover
+{
+	color: red;
+    text-decoration: none;
+}
+.Menu
+{
+	font-family:Arial;
+	font-size:11px;
+	color:Black;
+}
+/*******************************************************************************************/
+/* 
+	Help
+*/
+/*******************************************************************************************/
+.help a:visited
+{
+    color: Black;
+    text-decoration: underline;
+}
+.help a:link
+{
+    color: Black;
+    text-decoration: underline;
+}
+.help a:hover
+{
+    color:	Red;
+    text-decoration: underline;
+}
+body.help
+{
+	margin: 15px;
+	font-family: Verdana, Arial;
+	font-size: small;
+	color: Black;
+	background-color: #fffacd;
+}
+table.help
+{
+	width:100%;
+}
+th.help
+{
+	padding-bottom:	3px;
+	padding-top:	3px;
+}
+tr.help
+{
+}
+td.help
+{
+}
+/*******************************************************************************************/
+/* 
+	Content
+*/
+/*******************************************************************************************/
+table.ContentHead
+{
+	width:100%;
+	border-width:0px;
+	border-style:none;
+	/*background-color:#6086B7;*/
+}
+table.ContentSet
+{	
+	border-width:1px;
+	border-color:Black;
+}
+table.Content
+{	
+	border-width: 0px;
+}
+th.Content
+{
+	padding-bottom:	5px;
+	padding-top:	5px;
+	padding-left:	0px;
+	padding-right:	0px;
+}
+tr.Content
+{
+}
+td.Content
+{
+}
+.Content th.LM_PageTitleCell
+{
+	padding-bottom: 10px;
+	/*background-color:#6086B7;*/
+}
+.Content th.LM_PageNoAndHelpCell
+{
+	text-align: right;
+	vertical-align: middle;
+	padding-right:10px;
+}
+/*******************************************************************************************/
+/* 
+	eTax
+*/
+/*******************************************************************************************/
+.eTaxFieldLabel
+{
+	font-weight:bold;
+}
+.eTaxFieldLabelDashed
+{
+	font-weight:bold;
+	border-bottom-style:dashed;
+	border-bottom-width:1px;
+}
+.PeriodTable
+{
+	/*
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	margin-top:3px;
+	*/
+	width:100%;
+}
+.PropertyTable
+{
+	/*
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	margin-top:3px;
+	*/
+	width:450px;
+}
+.TradeTable
+{
+	/*
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	margin-top:3px;
+	*/
+	width:450px;
+}
+.Panel
+{
+	margin-top:3px;
+}
+.PanelWithBorder
+{
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	margin-top:3px;
+}
+.button
+{
+	border-style:outset;
+	width:75px;
+}
+.Table25AssessmentHead
+{
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	background-color:Silver;
+}
+.Table25AssessmentBodyReadOnly
+{
+	border-width:1px;
+	border-style:outset;
+	border-color:Black;
+	background-color:Silver;
+}
+.Table25AssessmentBody
+{
+
+}
+ .Table25AssessmentBody
+td{
+	height:30px;
+}
+.TextBoxNumericReadOnly
+{
+	background-color:Silver;
+	border-style:solid;
+	border-width:1px;
+	text-align:right;
+	width:100px;
+}
+.TextBoxNumericReadOnlyBold
+{
+	background-color:Silver;
+	border-style:solid;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-top-width:1px;
+	border-bottom-width:2px;
+	text-align:right;
+	font-weight:bold;
+	width:100px;
+}
+.TextBoxNumericNormal
+{	
+	border-style:solid;
+	border-width:1px;
+	text-align:right;
+	width:100px;
+}
+.TextBoxAlignRightReadOnly
+{
+	background-color:Silver;
+	border-style:solid;
+	border-width:1px;
+	text-align:right;
+	width:100%;
+}
+.TextBoxAlignRightReadOnlyWith100px
+{
+	background-color:Silver;
+	border-style:solid;
+	border-width:1px;
+	text-align:right;
+	width:100px;
+}
+.TextBoxAlignRightReadOnlyBold
+{
+	background-color:Silver;
+	border-style:solid;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-top-width:1px;
+	border-bottom-width:2px;
+	text-align:right;
+	font-weight:bold;
+	width:100%;
+}
+.TextBoxAlignRightNormal
+{	
+	border-style:solid;
+	border-width:1px;
+	text-align:right;
+	width:100%;
+}
+.Temp
+{
+	border:1px;
+	border-style:solid;
+	border-color:Black;
+	}
+.FieldLabelBig
+	{
+		font-weight:bold;
+		font-size:14px;	
+	}
+.FieldLabelNormal
+	{
+		font-size:12px;	
+	}
+.FieldLabelBold
+	{
+		font-weight:bold;
+		font-size:12px;	
+	}
+.hidden_td
+	{
+		visibility:hidden;
+	}
+.TableNumeric
+{
+	padding:0px;
+	width:100%;
+	border:0px;
+
+}
+.Width100pct
+{
+	width:100%;
+}
+.PropertyNo
+{
+	width:50px;
+}
+
+.PropertyDescription
+{
+	width:300px;
+}
+.PropertySelectBox
+{
+	width:350px;
+}
+.TradeCode
+{
+	width:50px;
+}
+.TradeDescription
+{
+	width:300px;
+}
+.TradeRank
+{
+	text-align:right;
+	width:50px;
+}
+.TradeSelectBox
+{
+	width:350px;
+}
+.NoteTextArea
+{
+	width:100%;
+}
+.fieldset
+{
+	width:100%;
+}
+.fieldsetForHalfPage
+{
+	width:50%;
+}
+.DataRowEven
+{
+    background-color: #99ccff;
+}
+.DataRowOdd
+{
+    background-color: #cccccc;
+}
+/*********************/
+/*
+	custom grid
+*/
+/*********************/
+.CustomGridItem
+{
+    background-color:#B1CBEB;
+    border-color:White;
+    border-width:2px;
+}
+/*********************/
+/*
+	LM_MegaSelectBoxClass
+*/
+/*********************/
+.LM_LabelTextCss
+{
+    background-color:#E0E0E0;
+	/*border-style:solid;
+	border-width:1px;*/
+	width:300px;
+	height:20px;
+}
+.LM_ErrorMessageCss
+{
+    background-color:#E0E0E0;
+	/*border-style:solid;
+	border-width:1px;*/
+	width:300px;
+	height:20px;
+	color:Red;
+}

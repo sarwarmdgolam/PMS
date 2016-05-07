@@ -1,0 +1,10 @@
+D:\RND\PMS\Common\bin\Debug\Common.dll
+D:\RND\PMS\Common\bin\Debug\Common.pdb
+D:\RND\PMS\Common\obj\Debug\ResolveAssemblyReference.cache
+D:\RND\PMS\Common\obj\Debug\Common.dll
+D:\RND\PMS\Common\obj\Debug\Common.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\Common\bin\Debug\Common.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\Common\bin\Debug\Common.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\Common\obj\Debug\ResolveAssemblyReference.cache
+D:\AAAAAAAAAAAAAAAAAA\PMS\Common\obj\Debug\Common.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\Common\obj\Debug\Common.pdb

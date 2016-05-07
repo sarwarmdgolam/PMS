@@ -1,0 +1,11 @@
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\BLLAuthenticationInfo.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\BLLAuthenticationInfo.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\Common.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\DAL.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\Model.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\Common.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\Model.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\bin\Debug\DAL.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\obj\Debug\ResolveAssemblyReference.cache
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\obj\Debug\BLLAuthenticationInfo.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLAuthenticationInfo\obj\Debug\BLLAuthenticationInfo.pdb

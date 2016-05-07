@@ -1,0 +1,212 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage_Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Protfolio Management System</title>
+
+    <script language="javascript" type="text/javascript" src="../Script/calendar.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../Script/calendar-en.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../Script/calendar-setup.js"></script>
+
+    <link href="Styles/iMbank.css" type="text/css" rel="stylesheet" />
+    <link type="text/css" href="../App_Themes/Default/PMS_GridView.css" />
+    <link rel="Stylesheet" href="../App_Themes/Default/PMS_Menu.css" type="text/css" />
+    <link type="text/css" href="../App_Themes/Default/PageDesign.css" />
+    <link type="text/css" href="../App_Themes/Default/PageDesignFromIcon.css" />
+
+    <script type="text/javascript" language="JavaScript">   
+//	onClipEvent(load)
+//    {
+//        resw=System.capabilities.screenResolutionX;
+//        resh=System.capabilities.screenResolutionY;
+
+//        this._width=resw;
+//        this._height=resh;
+
+//        fscommand("fullscreen","true");
+//    }
+
+    document.oncontextmenu = function()
+    {
+        return false;
+    }
+    document.onkeydown = function()
+    {        
+        // disable F11:122, F5:116, F3:114
+        if(window.event && (window.event.keyCode == 122 || window.event.keyCode == 116 || window.event.keyCode == 114))
+        {
+            window.event.keyCode = 000;
+            return false;
+        }
+        // disable backspace
+        /*instead U can do 
+        window.history.go(1);
+        but this will do a page flashing*/
+        if(event.srcElement.type != "text" && event.srcElement.type != "textarea" && event.srcElement.type != "password")
+        {
+            if(window.event.keyCode == 8) // backspace
+            {
+                window.event.keyCode = 000;
+                return false;
+            }
+        }
+    }
+    function updateObjectIframe(which){
+    document.getElementById('one').innerHTML = '<'+'object id="foo" name="foo" type="text/html" data="'+which.href+'"><\/object>';
+    }
+
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table id="tblDateRange" width="100%" runat="server" style="margin: 1px 0px 1px 0px;"
+            cellpadding="0" border="0" cellspacing="0">
+            <tr>
+                <td colspan="3" class="LM_MasterPageTopCell">
+                    <table id="Table1" width="100%" runat="server" style="margin: 1px 0px 1px 0px;" cellpadding="0"
+                        border="0" cellspacing="0">
+                        <tr>
+                            <td rowspan="3" align="left">
+                                <asp:Image ID="imgLogo" runat="server" AlternateText="Logo" Width="100%" Height="100px"
+                                    ImageUrl="~/MasterPage/Images/logo-images/ACML-Logo.gif" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <asp:Label ID="lblaccesstime" runat="server" Font-Bold="true"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="width: 100%" class="LM_MasterPageAfterTopCell">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <div style="float: left; margin-left: 5%; font-weight: bold;">
+                                    <span>First Path:</span>
+                                    <asp:TextBox ID="txtFirstPath" runat="server" SkinID="txt50"></asp:TextBox>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: left; margin-left: 30%; font-weight: bold; font-size: 11px;">
+                                    <asp:Label ID="lblTradingDate" runat="server" Text="Trading Date: "></asp:Label>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="float: right; margin-right: 10%;">
+                                    <asp:LinkButton ID="lnkLogin" runat="server" Text="Logout" Visible="true" ForeColor="blue"
+                                        OnClick="lnkLogin_Click" CausesValidation="False" />
+                                </div>
+                            </td>
+                            <td>
+                                <asp:Label ID="lblLoginName" runat="server" Font-Bold="true"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 15%; vertical-align: top; text-align: center;" class="LM_MasterPageMenuCell">
+                    <table border="0" cellspacing="0" cellpadding="0" style="width: 90%; margin: 10px 10px 0px 10px;">
+                        <tr>
+                            <td>
+                                <div style="float: left; overflow: auto; width: 100%;min-height:200px;">
+                                    <asp:Menu ID="menuBar" runat="server" Width="100%" CssClass="MenuBar" MaximumDynamicDisplayLevels="10">
+                                        <StaticMenuStyle CssClass="StaticMenuItem" />
+                                        <StaticMenuItemStyle CssClass="StaticMenuItemStyle" />
+                                        <StaticHoverStyle CssClass="StaticHoverStyle" />
+                                        <StaticSelectedStyle CssClass="StaticSelectedStyle" />
+                                        <DynamicMenuItemStyle CssClass="DynamicMenuItemStyle" />
+                                        <DynamicHoverStyle CssClass="DynamicHoverStyle" />
+                                    </asp:Menu>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="5px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="td_MenuLink">
+                                <span>GetGrow Technosoft</span>
+                                <br />
+                                <asp:Label ID="lblLegalstatement" runat="server" Text="All rights reserved"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td runat="server" class="LM_MasterPageDataCell" style="width: 50%; vertical-align: top;
+                    text-align: left;">
+                    <table class="tb-tablecenter">
+                        <tr>
+                            <td class="td-onecolumncenter">
+                                <div class="div-pagetitle">
+                                    <table class="tb-tablecenter">
+                                        <tr>
+                                            <td class="td-twocolumnleftsideleft">
+                                                <span id="spanPageTile" runat="server" class="span-pagetitle"></span>
+                                            </td>
+                                            <td class="td-twocolumnrightsideright">
+                                                <a id="aPageNav" runat="server" href="" class="a-pagenavigationurl"></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tb-tablecenter">
+                                <div id="divErrMesg" runat="server" class="ui-state-error ui-corner-all">
+                                    <span class="ui-icon ui-icon-alert"></span>
+                                    <asp:Label ID="lblErrMsg" runat="server" EnableTheming="true" Font-Bold="true" Font-Size="Large">
+                                    </asp:Label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tb-tablecenter">
+                                <div id="divInfoMsg" runat="server" class="ui-state-highlight ui-corner-all">
+                                    <span class="ui-icon ui-icon-info"></span>
+                                    <asp:Label ID="lblMsg" runat="server" EnableTheming="true" Font-Bold="true" Font-Size="Large">
+                                    </asp:Label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tb-tablecenter">
+                                <div class="ui-state-error-text">
+                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Following error occurs:"
+                                        ShowMessageBox="false" DisplayMode="BulletList" ShowSummary="true" ValidationGroup="insert" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td style="width: 15%; vertical-align: top; text-align: left;" class="LM_MasterPageMenuCell">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="LM_MasterPageAfterTopCell" align="left">
+                </td>
+            </tr>
+        </table>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+    </form>
+</body>
+</html>

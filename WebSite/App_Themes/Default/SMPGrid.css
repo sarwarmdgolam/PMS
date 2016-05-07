@@ -1,0 +1,138 @@
+﻿/* Group Grid */
+
+.GroupGrid
+{	
+	border: solid 1px #BBD9EE;
+	border-width:1px;
+    border-collapse:collapse;
+    color: #333333;
+    width:100%
+}
+
+.GroupGrid th 
+{  
+	background-color:#81AEDC;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #FFFFFF;
+    vertical-align:middle;
+    text-align:center;
+}  
+
+.GroupGrid td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:x-small;
+    vertical-align:top ;
+}
+
+.AlternetGridRow 
+{
+	color:#000000;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:x-small;
+    vertical-align:top ;
+}
+
+.MultiRowHeaderEmpty
+{
+	background-color:#81AEDC;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #FFFFFF;
+    vertical-align:middle;
+    text-align:center;	
+}
+
+.MultiRowHeaderOrdered
+{
+	background-color:#81AEDC;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #000000;
+    vertical-align:middle;
+    text-align:center;	
+    font-weight:bold;
+    
+}
+
+
+.GroupGridFooter
+{
+	color:#333333;
+    font-weight:bold;
+}
+
+.ExecutedBuySellOrder
+{
+	background-color:#E9F4F5;            
+}
+
+.SubGroupGrid
+{	
+	border: solid 1px #BBD9EE;
+	border-width:1px;
+    border-collapse:collapse;
+    color: #333333;
+    width:100%
+}
+
+.SubGroupGrid th 
+{  
+	background-color:#B4DC81;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #FFFFFF;
+    vertical-align:middle;
+    text-align:center;
+}  
+
+.SubGroupGrid td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:x-small;
+    vertical-align:top ;
+}
+
+.SubGroupSellGrid
+{	
+	border: solid 1px #BBD9EE;
+	border-width:1px;
+    border-collapse:collapse;
+    color: #333333;
+    width:100%
+}
+
+.SubGroupSellGrid th 
+{  
+	background-color:#DC8199;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #FFFFFF;
+    vertical-align:middle;
+    text-align:center;
+}  
+
+.SubGroupSellGrid td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:x-small;
+    vertical-align:top ;
+}
+/* Group Grid End */

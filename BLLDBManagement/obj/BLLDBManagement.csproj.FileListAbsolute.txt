@@ -1,0 +1,11 @@
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\BLLDBManagement.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\BLLDBManagement.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\Common.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\DAL.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\Model.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\Common.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\Model.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\bin\Debug\DAL.pdb
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\obj\Debug\ResolveAssemblyReference.cache
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\obj\Debug\BLLDBManagement.dll
+D:\AAAAAAAAAAAAAAAAAA\PMS\BLLDBManagement\obj\Debug\BLLDBManagement.pdb

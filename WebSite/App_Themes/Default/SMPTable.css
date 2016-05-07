@@ -1,0 +1,112 @@
+﻿.CustomerTable
+{	
+	border: solid 1px #BBD9EE;
+	border-width:1px;
+    border-collapse:collapse;
+    color: #333333;
+    width:100%
+}
+
+.CustomerTableTitle
+{  
+	background-color:#EFF6FD;
+    border-color: #2ba1ac #2ba1ac #2ba1ac #2ba1ac;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #000000;
+    vertical-align:middle;
+    text-align:left;
+}  
+
+.CustomerTable td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:smaller;
+    vertical-align:top ;
+}
+
+.CustomerCompanyTable
+{	
+	border: solid 1px #BBD9EE;
+	border-width:0px;
+    border-collapse:collapse;
+    color: #333333;
+    width:100%;
+    font-family:Arial;
+    
+}
+
+
+.CustomerCompanyTable td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 0px #BBD9EE;
+    font-family:Arial;
+    font-size:small;
+    vertical-align:top ;
+}
+
+.CustomerDiv
+{	
+	padding: 10px 10px 10px 10px; 
+	 font-family:Arial;
+}
+
+.CustomerTemplateGridFooter
+{
+	color:#ffffff;
+    font-weight:bold;
+    text-align:right;
+    background-color:#7CB5E5;
+}
+
+
+.PortfolioTable
+{	
+	border: solid 1px #BBD9EE;
+	border-width:1px;
+    border-collapse:collapse;
+    color: #333333;
+    
+}
+
+.PortfolioTableTitle
+{  
+	background-color:#81AEDC;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 1px;
+    color: #000000;
+    vertical-align:middle;
+    text-align:left;
+}  
+
+.PortfolioTable td 
+{
+	color:#333333;
+	padding: 3px 3px 3px 3px;
+    border: solid 1px #BBD9EE;
+    
+    font-size:smaller;
+    vertical-align:top ;
+}
+
+
+.CustomerShareTable
+{		
+    
+    
+    
+}
+
+.CustomerTable td 
+{
+	
+    font-size:smaller;
+    vertical-align:top ;
+}
+.rightAlign { text-align:right; }

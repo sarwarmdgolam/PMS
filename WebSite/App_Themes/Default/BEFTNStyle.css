@@ -1,0 +1,31 @@
+﻿
+/*Section DIV with header*/
+.SectionDiv
+{
+	border: 1px solid #2BA1AC; /*background-color: #72A9D3;*/ /*background: #72A9D3 url(images/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x;*/
+	color: #222222; /*padding:3px 3px 3px 3px;*/
+}
+
+.SectionDiv-header
+{
+	background: url("images/ui-bg_gloss-wave_55_5c9ccc_500x100.png") repeat-x scroll 50% 50% #5C9CCC;
+	border: 1px solid #2BA1AC;
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 20px;
+	vertical-align: middle;
+}
+/*END Section DIV with header*/
+
+/*Detailview Style*/
+.DetailsView
+{
+	border: solid 0px #FFFFFF;
+}
+
+.detailViewRow td
+{
+	padding: 5px 5px 5px 5px;
+	border: solid 0px #FFFFFF;
+}
+/*END Detailview Style*/

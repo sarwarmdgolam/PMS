@@ -1,0 +1,185 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+--%>
+
+
+<asp:GridView 
+runat="server" 
+ForeColor="#585858" >
+<HeaderStyle CssClass="defaultGridHeader" />
+<RowStyle   CssClass="defaultGridRow"/>
+<AlternatingRowStyle CssClass="defaultGridAlternateRow" />
+<SelectedRowStyle  CssClass="defaultGridSelectedRow" />
+<FooterStyle  CssClass="defaultGridFooterStyle" />
+<PagerStyle CssClass="defaultGridPagerStyle" />
+<PagerSettings FirstPageText="First Page"
+            LastPageText="Last Page" Mode="NumericFirstLast"
+             NextPageText="Next Page" 
+            PreviousPageText="Previous Page" />
+</asp:GridView>
+
+<asp:CheckBox 
+runat="server" 
+Font-Names="Tahoma" 
+Font-Size="8pt" 
+ForeColor="#585858"  />
+
+
+<asp:RadioButton 
+ runat="server" 
+ ForeColor="#585858"
+ Font-Names="Tahoma" 
+ Font-Size="8pt" />
+
+<asp:BulletedList 
+    runat="server" 
+    Font-Bold="False" 
+    Font-Names="Tahoma"
+    Font-Size="9pt" 
+    ForeColor="Black"     
+    BulletStyle="Square" 
+    DisplayMode="HyperLink" />
+
+<asp:FileUpload runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="10pt"
+    Height="22px" 
+    BorderWidth="1px" 
+    BorderColor="#426194"
+    BorderStyle="Solid"
+    Width="99%" />
+    
+<asp:Panel runat="server" 
+    SkinID="ParentPanel" 
+    Height="100%" 
+    Width="100%" 
+    BackColor="#ADC0EA">
+</asp:Panel>
+
+<asp:Panel runat="server" 
+    SkinID="ChildPanel"   
+    BorderColor="#FFFFFF" 
+    BorderStyle="Solid" 
+    BorderWidth="0px">
+</asp:Panel>
+
+<asp:Panel runat="server" 
+    SkinID="TabChildPanel"   
+    BorderColor="#FFFFFF" 
+    BorderStyle="Solid" 
+    BorderWidth="8px">
+</asp:Panel>
+
+<asp:Panel runat="server" 
+    SkinID="TabDataPanel" 
+    Height="200Px" 
+    Width="100%">
+</asp:Panel>
+
+
+<asp:Label runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="8pt" 
+     ForeColor="#585858"     
+   >
+</asp:Label>
+
+
+<asp:TextBox runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="8pt" 
+    Height="17px" 
+    BorderColor="#6D85C3" 
+    BorderStyle="Solid" 
+    BorderWidth="1px" 
+    ForeColor="#585858" 
+    fon-weight="normal"
+    >
+</asp:TextBox>
+
+
+
+<asp:DropDownList runat="server" 
+    
+    Font-Names="Tahoma" 
+    Font-Size="8pt"     
+    ForeColor="#585858"  
+    Height="17px"   
+    >
+</asp:DropDownList>
+
+<asp:Button runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="8pt"
+    Height="30px"
+    Width="100px" 
+    BackColor="#F5F5ED" 
+    BorderWidth="1px" 
+    BorderColor="#426194"
+    BorderStyle="Solid" 
+    SkinID="insertbutton"
+    />
+
+
+
+    
+
+<asp:RadioButton runat="server" 
+    SkinID="XTabRadioButton"
+    Font-Names="Tahoma" 
+    Font-Size="8pt"     
+    ForeColor="Black">
+</asp:RadioButton>
+
+
+
+<asp:ListBox runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="8pt"     
+    BorderStyle="Solid" 
+    BorderColor="#6D85C3" 
+    ForeColor="Black"  
+    Height="102px"
+    border="1px"   
+    Width="99%">
+</asp:ListBox>
+
+
+<asp:ValidationSummary 
+    runat="server"     
+    style="width:98%" DisplayMode="BulletList" CssClass="ValidationSummary" 
+/>
+
+
+
+<asp:TextBox 
+    skinId="skMultilineTextBox"
+    runat="server" 
+    Font-Names="Tahoma" 
+    Font-Size="8pt" 
+    BorderColor="#6D85C3" 
+    BorderStyle="Solid" 
+    BorderWidth="1px" 
+    ForeColor="#585858" 
+    fon-weight="normal"
+    Width="250px"
+    >
+</asp:TextBox>
+<asp:TextBox runat="server" Width="250px" skinid="txt250" ></asp:TextBox>
+<asp:TextBox runat="server" Width="50px" skinid="txt50" ></asp:TextBox>
+<asp:TextBox runat="server" Width="150px" skinid="txt100" ></asp:TextBox>
+<asp:TextBox runat="server" Width="109px" skinid="txtDate" ></asp:TextBox>
+<asp:DropDownList runat="server" Width="156px" skinid="ddl100"></asp:DropDownList>
+<asp:DropDownList runat="server" Width="200px" skinid="ddl200"></asp:DropDownList>
+<asp:CheckBoxList  runat="server" Width="150px" skinid="chk150"></asp:CheckBoxList>

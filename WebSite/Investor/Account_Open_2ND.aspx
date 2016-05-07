@@ -1,0 +1,786 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage/Default.master" AutoEventWireup="true"
+    CodeFile="Account_Open_2ND.aspx.cs" Inherits="Investor_Account_Open_2ND" Title="Account Open" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+    <table width="100%">
+        <tr>
+            <td colspan="2">
+                <div style="width: 100%; background-color: #99CCCC;">
+                    <h2>
+                        Customer Account Opening Form
+                    </h2>
+                    <div style="float: right;">
+                        <asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="true" PostBackUrl="~/Investor/Account_Open_List.aspx">View List</asp:LinkButton>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="divErrMesg" class="ui-widget" runat="server">
+                    <div class="ui-state-error ui-corner-all" style="padding: 0pt 0.7em;">
+                        <span class="ui-icon ui-icon-alert" style="margin-right: 0.3em;"></span>
+                        <asp:Label ID="lblErrMsg" runat="server" EnableTheming="true">
+                        </asp:Label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="divInfoMsg" class="ui-widget" runat="server">
+                    <div class="ui-state-highlight ui-corner-all" style="padding: 0pt 0.7em;">
+                        <span class="ui-icon ui-icon-info" style="margin-right: 0.3em;"></span>
+                        <asp:Label ID="lblMsg" runat="server" EnableTheming="true">
+                        </asp:Label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+            </td>
+        </tr>
+    </table>
+    <div style="width: 100%;">
+        <div style="width: 100%">
+            <table width="100%" runat="server" style="margin: 5px 5px 5px 5px;" cellpadding="0" border="0" cellspacing="0">
+                <tr>
+                    <td style="width: 40%; text-align:right">
+                        <span>Investor Code</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="width: 60%; text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_INVESTOR_CODE" runat="server" SkinID="txt100"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvtxt_INVESTOR_CODE" runat="server" ErrorMessage="Investor Code!"
+                            ControlToValidate="txt_INVESTOR_CODE" ValidationGroup="insert" SetFocusOnError="true"
+                            ForeColor="red">*</asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">
+                        <span>Account Type</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_ACC_TYPE_ID" runat="server" SkinID="ddl100" AutoPostBack="true"
+                            OnSelectedIndexChanged="ddl_ACC_TYPE_ID_SelectedIndexChanged">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvddl_ACC_TYPE_ID" runat="server" ValidationGroup="insert"
+                            ControlToValidate="ddl_ACC_TYPE_ID" ErrorMessage="Account Type!" InitialValue="0"
+                            SetFocusOnError="true" ForeColor="red">*</asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div style="float: left;">
+                            <h3 style="background-color: #99CCCC;">
+                                Corporate Particulars
+                            </h3>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                   <td style="text-align:right">
+                        <span>Name</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txtCorporateName" runat="server" Width="200px" SkinID="txt250"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Corporate Name!"
+                            ControlToValidate="txtCorporateName" ValidationGroup="insert" SetFocusOnError="true"
+                            ForeColor="red">*</asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">
+                        <span>Nature of Business</span><span class="asterisk">*</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddlBusinessNature" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="insert"
+                            ControlToValidate="ddlBusinessNature" ErrorMessage="Nature of Business!" InitialValue="0"
+                            SetFocusOnError="true" ForeColor="red">*</asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">
+                        <span>Business/Office Address</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txtCorporatedOfficeAddress" runat="server" SkinID="skMultilineTextBox"
+                            TextMode="MultiLine"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right">
+                        <span>Name of Managing Director/CEO</span><span class="asterisk">*</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txtCompanyMDName" runat="server" Width="200px" SkinID="txt100"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table id="Table4" width="100%" runat="server" style="margin: 5px 5px 5px 5px;" cellpadding="0" border="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <span>Phone(Off.)</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtCorporatePhoneOffice" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <span>Phone(Cell)</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtCorporatePhoneCell" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>FAX No</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtCorporateFaxNo" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <span>Email </span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtCorporateEmail" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Trade License No </span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTradeLicenseNo" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <span>TIN No#</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTINNo" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Date of Incorporation</span>
+                                </td>
+                                <td style="width: 229px">
+                                    <asp:TextBox ID="txtIncorporationDate" runat="server" Enabled="false" SkinID="txt100"></asp:TextBox>
+                                </td>
+                                <td>
+                                    <span>Registration No#</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtRegistrationNo" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Opening Date</span>
+                                </td>
+                                <td style="width: 229px">
+                                    <asp:TextBox ID="txtCorporateOpeningDate" runat="server" Enabled="false" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="divAdvisoryAccount" runat="server">
+                            <table id="Table1" width="100%" runat="server" style="margin: 5px 5px 5px 5px;" cellpadding="0" border="0" cellspacing="0">
+                                <tr>
+                                    <td style="width: 40%">
+                                        <span>Name of Existing BO Account</span><span class="asterisk">*</span>
+                                    </td>
+                                    <td style="width: 60%">
+                                        <asp:TextBox ID="txtExistingBOAcc" runat="server" SkinID="txt250"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Existing BO Code</span><span class="asterisk">*</span>
+                                    </td>
+                                    <td style="width: 229px">
+                                        <asp:TextBox ID="txtExistingBOCode" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Name of Depository Participant(DP)</span><span class="asterisk">*</span>
+                                    </td>
+                                    <td style="width: 229px">
+                                        <asp:TextBox ID="txtExistingBOAccDP" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Name of Broker</span><span class="asterisk">*</span>
+                                    </td>
+                                    <td style="width: 229px">
+                                        <asp:TextBox ID="txtExistingBOBroker" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;">
+                <tr>
+                    <td style="vertical-align: top">
+                        <div style="width: 100%;">
+                            <table id="Table2" width="100%" runat="server" style="margin: 5px 5px 5px 5px;" cellpadding="0" border="0" cellspacing="0">
+                                <tr>
+                                    <td colspan="2">
+                                        <div style="float: left;">
+                                            <h3 style="background-color: #99CCCC;">
+                                                Bank Information
+                                            </h3>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 40%;">
+                                        <span>Bank</span>
+                                    </td>
+                                    <td style="width: 60%;">
+                                        <asp:DropDownList ID="ddl_BANK_ID" runat="server" SkinID="ddl100">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Bank Branch</span>
+                                    </td>
+                                    <td>
+                                        <asp:DropDownList ID="ddl_BANK_BRANCH_ID" runat="server" SkinID="ddl100">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Bank Account Type</span>
+                                    </td>
+                                    <td>
+                                        <asp:DropDownList ID="ddl_BANK_ACC_TP_ID" runat="server" SkinID="ddl100">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Account No#</span>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txt_BANK_ACC_NO" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Routing No#</span>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtRoutingNo" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="vertical-align: top">
+                        <div style="width: 100%;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td colspan="2">
+                                        <div style="float: left;">
+                                            <h3 style="background-color: #99CCCC;">
+                                                Introducer Information
+                                            </h3>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 40%;">
+                                        <span>Introducer Code </span>
+                                    </td>
+                                    <td style="width: 60%;">
+                                        <asp:TextBox ID="txt_INTRODUCER_CODE" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Introducer Name </span>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txt_INTRODUCER_NAME" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Introducer Contact No# </span>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txt_INTRODUCER_CONTACT_NO" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Special Instruction </span>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txt_SPECIAL_INSTRUCTION" runat="server" SkinID="txt100"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;">
+                <tr>
+                    <td colspan="2">
+                        <div style="float: left;">
+                            <h3 style="background-color: #99CCCC;">
+                                Photo and Signature
+                            </h3>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 15px">
+                        <div>
+                            <strong>Picture (1st Joint Holder):</strong>
+                            <br />
+                            <asp:Image ID="imgFJH" runat="server" Width="150px" Height="122px" />
+                            <asp:FileUpload ID="fuFJHpicture" runat="server" />
+                            <asp:Button ID="btnUploadFJHPicture" runat="server" Text="Upload" CausesValidation="false"
+                                CssClass="form_button ui-corner-all" />
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <strong>Signature (1st Joint Holder):</strong>
+                            <br />
+                            <asp:Image ID="imgSignatureFJH" runat="server" Width="249px" Height="54px" />
+                            <asp:FileUpload ID="fuFJHSignature" runat="server" />
+                            <asp:Button ID="btnUploadFJHSignature" runat="server" Text="Upload" CausesValidation="false"
+                                CssClass="form_button ui-corner-all" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <strong>Picture (2nd Joint Holder):</strong>
+                            <br />
+                            <asp:Image ID="imgSJH" runat="server" Width="150px" Height="122px" />
+                            <asp:FileUpload ID="fuSJHpicture" runat="server" />
+                            <asp:Button ID="btnUploadSJHPicture" runat="server" Text="Upload" CausesValidation="false"
+                                CssClass="form_button ui-corner-all" />
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <strong>Signature (2nd Joint Holder):</strong>
+                            <br />
+                            <asp:Image ID="imgSignatureSJH" runat="server" Width="249px" Height="54px" />
+                            <asp:FileUpload ID="fuSJHSignature" runat="server" />
+                            <asp:Button ID="btnUploadSJHSignature" runat="server" Text="Upload" CausesValidation="false"
+                                CssClass="form_button ui-corner-all" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span id="ctl00_contPlcHdrMasterHolder_MaxImageSize">Max size is 40KB.
+                            <br />
+                            <span id="ctl00_contPlcHdrMasterHolder_hwOfImage">Max height and width is 300 X 300</span>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 100%">
+            <table id="Table3" width="100%" runat="server" style="margin: 5px 5px 5px 5px;" cellpadding="0" border="0" cellspacing="0">
+                <tr>
+                    <td colspan="2">
+                        <div style="float: left;">
+                            <h3 style="background-color: #99CCCC;">
+                                BO Information
+                            </h3>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:40%; text-align:right;">
+                        <span>BO Code</span>
+                    </td>
+                    
+                    <td style="width:60%; text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_BO_CODE" runat="server" SkinID="txt100"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>First Applicant Name</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_FIRST_JOIN_HOLDER_NAME" runat="server" Width="200px" SkinID="txt100"></asp:TextBox>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Join Applicant Name</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_SEC_JOIN_HOLDER_NAME" runat="server" Width="200px" SkinID="txt100"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Father Name</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_FATHER_NAME" runat="server" SkinID="txt100"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Mother Name</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:TextBox ID="txt_MOTHER_NAME" runat="server" SkinID="txt100"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Operate Branch</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_BRANCH_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Operation Type</span><span class="asterisk">*</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_OPERATION_TYPE_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Investor Type</span><span class="asterisk">*</span>
+                    </td>
+                    <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_INVESTOR_TYPE_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Parent Code</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_PARENT_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Sub Account </span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_SUB_ACCOUNT_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Gender </span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_GENDER" runat="server" SkinID="ddl100">
+                            <asp:ListItem Selected="True" Value="M">Male</asp:ListItem>
+                            <asp:ListItem Value="F">FeMale</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Date Of Birth</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="height: 24px">
+                                    <asp:TextBox ID="txt_BIRTH_DT" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                                <td style="width: 111px; height: 24px;">
+                                    <img id="imgtxt_BIRTH_DT" src="../Images/Calendar.gif" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">
+                        <span>Account Status</span>
+                    </td>
+                   <td style="text-align:left; padding-left:10px;">
+                        <asp:DropDownList ID="ddl_ACCOUNT_STATUS_ID" runat="server" SkinID="ddl100">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="width: 100%;">
+            <tr>
+                <td style="vertical-align: top; width: 60%;">
+                    <div style="width: 100%;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td colspan="2">
+                                    <div style="float: left;">
+                                        <h3 style="background-color: #99CCCC;">
+                                            Contact Information
+                                        </h3>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <span>Present Address</span>
+                                </td>
+                                <td style="width: 60%">
+                                    <asp:TextBox ID="txt_PRESENT_ADDRESS" runat="server" SkinID="skMultilineTextBox"
+                                        TextMode="MultiLine"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 40%">
+                                    <span>Parmanent Address</span>
+                                </td>
+                                <td style="width: 60%">
+                                    <asp:TextBox ID="txt_PARMANENT_ADDRESS" runat="server" SkinID="skMultilineTextBox"
+                                        TextMode="MultiLine"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table width="100%">
+                                        <tr>
+                                            <td>
+                                                <span>District</span>
+                                            </td>
+                                            <td>
+                                                <asp:DropDownList ID="ddl_DISTRICT_ID" runat="server" SkinID="ddl100">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td>
+                                                <span>Country</span>
+                                            </td>
+                                            <td>
+                                                <asp:DropDownList ID="ddl_COUNTRY_ID" runat="server" SkinID="ddl100">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Phone(Off.)</span>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txt_PHONE" runat="server" SkinID="txt100"></asp:TextBox>
+                                            </td>
+                                            <td>
+                                                <span>Phone(Cell)</span>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txt_MOBILE" runat="server" SkinID="txt100"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>FAX No</span>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txt_FAX" runat="server" SkinID="txt100"></asp:TextBox>
+                                            </td>
+                                            <td>
+                                                <span>Email </span>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txt_EMAIL" runat="server" SkinID="txt100"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Opening Date</span>
+                                            </td>
+                                            <td style="width: 229px">
+                                                <asp:TextBox ID="txt_OPENING_DT" runat="server" Enabled="false" SkinID="txt100"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="vertical-align: top;width: 40%;">
+                    <div style="width: 100%;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td colspan="2">
+                                    <div style="float: left;">
+                                        <h3 style="background-color: #99CCCC;">
+                                            Accounts Settings
+                                        </h3>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <span>Trader</span>
+                                </td>
+                                <td style="width: 60%;">
+                                    <asp:DropDownList ID="ddl_TRADER_ID" runat="server" SkinID="ddl100">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Interest Calculation ON</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txt_INTEREST_CAL_ON" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Is PayIN</span>
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="chk_IS_PAYIN" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Is PayOUT</span>
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="chk_IS_PAYOUT" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Is Email Service </span>
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="chk_Is_Email_service" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Is SMS Service</span>
+                                </td>
+                                <td>
+                                    <asp:CheckBox ID="chk_Is_SMS_service" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Margin Loan Ratio </span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txt_LOAN_RATIO" runat="server">0.00</asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td style="vertical-align: top">
+                    <div style="width: 100%;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td colspan="2">
+                                    <div style="float: left;">
+                                        <h3 style="background-color: #99CCCC;">
+                                            Other Information
+                                        </h3>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 40%;">
+                                    <span>Voter ID NO# </span>
+                                </td>
+                                <td style="width: 60%;">
+                                    <asp:TextBox ID="txt_VOTER_ID_NO" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Occupation</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txt_Occupation" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Passport No#</span>
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txt_PASSPORT_NO" runat="server" SkinID="txt100"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="vertical-align: top">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="width: 100%;">
+        <table>
+            <tr>
+                <td>
+                    <asp:HiddenField ID="hdn_ID" runat="server" />
+                    <asp:Button ID="btn_Save" runat="server" Text="Save" OnClick="btn_Save_Click" ValidationGroup="insert"
+                        CausesValidation="true" />
+                </td>
+                <td>
+                    <asp:Button ID="btn_Update" runat="server" Text="Update" ValidationGroup="insert"
+                        OnClick="btn_Update_Click" CausesValidation="true" />
+                </td>
+                <td>
+                    <asp:Button ID="btn_Clear" runat="server" Text="Refresh" OnClick="btn_Clear_Click" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+
+    Calendar.setup
+        ({
+            inputField  : "ctl00_Main_txt_BIRTH_DT",
+            ifFormat    : "dd-M-y",
+            button      : "imgtxt_BIRTH_DT",
+            weekNumbers : false
+        });
+
+    </script>
+
+</asp:Content>

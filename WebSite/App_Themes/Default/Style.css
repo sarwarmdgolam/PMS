@@ -1,0 +1,919 @@
+﻿/* Added by Khaid on 05 July 2009 */
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px; /*color: #4a4747;*/ /*color: #585858;*/
+	color: Black;
+}
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+
+img
+{
+	border: 0;
+}
+
+form
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#maincontainer
+{
+	margin: 0 auto 0 auto;
+	padding: 0;
+	width: 900px; /*background-color: #c1d5de;*/
+	background-color: #F5F5F5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	vertical-align: middle;
+	text-align: left;
+}
+
+
+#popupContainer
+{
+	margin: 0 auto 0 auto;
+	padding: 0;
+	background-color: #F5F5F5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	vertical-align: middle;
+	text-align: left;
+}
+
+
+
+#maincontainerPopup
+{
+	margin: 0 auto 0 auto;
+	padding: 0;
+	width: 100%; /*background-color: #c1d5de;*/
+	background-color: #F5F5F5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.pageTitle
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	padding-left: 10px;
+	color: white;
+	vertical-align: bottom;
+	padding-bottom: 3px;
+}
+
+
+.header-thickLine
+{
+	color: #FFFFFF;
+	background-image: url(  ../../Images/HeaderBackground_.png );
+	height: 72px;
+	vertical-align: bottom;
+}
+
+.ScrollDSECompanyName
+{
+	
+color: #000000;
+	background-color: #ffffff;
+	border: 5px #000000 solid;
+	margin: 0 0 10px 0;
+	padding-bottom: 5px;
+	text-align: right;
+	font-size: 0.75em;
+	margin-right: 5px;
+	border-color:Black;	
+	border-width:thick;
+
+}
+
+
+
+.ProjectName
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17pt;
+	font-weight: bold;
+	padding-left: 10px;
+	color: #F0D56B;
+	vertical-align: bottom;
+}
+.ProjectVersion
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	padding-left: 10px;
+	color: #FFFFFF;
+	vertical-align: bottom;
+}
+
+.header-thinLine
+{
+	color: white; /*background-color: #11A6D4;*/
+	height: 8px;
+}
+
+#header
+{
+	/*float:none;*/
+	margin: 0 auto 0 auto; /*background-image: url( 'banner.gif'); 	height: 89px;*/
+}
+
+
+#PageHeader
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-image: url(  ../../Images/PageHeaderBackground.png );
+	font-size: 10pt;
+	padding-left: 10px;
+	color: #FFFFFF;
+	vertical-align: bottom;
+	height: 22px;
+}
+
+.footer
+{
+	color: #B4D6F7;
+	text-align: center;
+	background-color: #0072bb;
+	background-image: url(  ../../Images/Footer.png );
+	height: 26px;
+}
+.groupHeaderText
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt; /*color: #585858;*/
+	color: #3D89E9;
+	font-weight: bold;
+	border-bottom-color: #585858;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+
+
+.mGrid
+{
+	width: 100%;
+	background-color: #ffffff;
+	margin: 5px 0 10px 0;
+	border: solid 0px #525252;
+	border-collapse: collapse;
+}
+.mGrid td
+{
+	padding: 2px;
+	border: solid 1px #c1c1c1;
+	color: #717171;
+}
+.mGrid th
+{
+	padding: 4px 2px;
+	color: #ffffff;
+	background: #709245 url(grd_head.gif) repeat-x top;
+	border-left: solid 1px #525252;
+	font-size: 0.9em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.mGrid .alt
+{
+	background: red url(grd_alt.png) repeat-x top;
+}
+.mGrid .pgr
+{
+	background: blue url(grd_pgr.png) repeat-x top;
+}
+.mGrid .pgr table
+{
+	margin: 5px 0;
+}
+.mGrid .pgr td
+{
+	border-width: 0;
+	padding: 0 6px;
+	border-left: solid 1px #666;
+	font-weight: bold;
+	color: #fff;
+	line-height: 12px;
+}
+.mGrid .pgr a
+{
+	color: #666;
+	text-decoration: none;
+}
+.mGrid .pgr a:hover
+{
+	color: #000;
+	text-decoration: none;
+}
+
+.defaultGridHeader
+{
+	background-color: #769A37;
+	background-image: url(grd_head.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 22px;
+}
+
+.defaultGridHeader th
+{
+	padding: 2px;
+	border: solid 1px #91B4C5;
+}
+
+.defaultGridRow
+{
+	background-color: #C2D9E4; /*#E0CC3C;*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	height: 12px;
+}
+
+
+.defaultGridRow td
+{
+	padding: 2px;
+	border: solid 1px #91B4C5;
+	color: #717171;
+}
+
+.defaultGridAlternateRow
+{
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	height: 12px;
+}
+.defaultGridAlternateRow td
+{
+	padding: 2px;
+	border: solid 1px #91B4C5;
+	color: #717171;
+}
+
+.defaultGridSelectedRow
+{
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	height: 12px;
+}
+
+
+.defaultGridFooterStyle
+{
+	background-color: #769A37;
+	background-image: url(grd_head.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: red;
+	height: 10px;
+}
+
+
+.defaultGridPagerStyle
+{
+	background-color: #769A37;
+	background-image: url(grd_head.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: white;
+	height: 10px;
+}
+
+.defaultGridPagerStyle a
+{
+	color: White;
+}
+
+.defaultGridPagerStyle span
+{
+	color: White;
+	font-weight: bold;
+}
+
+.defaultGridEmptyData
+{
+	background-color: #C2D9E4;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #585858;
+	height: 12px;
+	text-align: center;
+}
+/*
+#logo  
+{
+	width: 215px;
+	height: 62px;
+	float: left;
+	vertical-align: middle;
+	padding: 10px;
+}*/
+
+/* purpose: To define controle styles*/
+
+
+/* purpose: To make two column detail page */
+.tb-TwoColumnDetail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.tb-TwoColumn120PxDetail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.tr-TwoColumnDetail
+{
+}
+
+.tr-TwoColumn120PxDetail
+{
+}
+
+.td-labelColumnOfTwoColumn
+{
+	width: 30%;
+	text-align: right;
+	padding-right: 5px;
+	font-weight:bold;
+}
+
+.td-labelColumnOfTwo120PxColumn
+{
+	width: 10%;
+	text-align: right;
+	padding-right: 5px;
+	font-weight:bold;
+}
+
+.td-SingleColumnOfTwoColumn
+{
+	text-align: left;
+	width: 70%;
+}
+
+.td-SingleColumnOfTwo120pxColumn
+{
+	text-align: left;
+	width: 90%;
+}
+
+.td-DoubleColumnOfTwoColumn
+{
+	width: 100%;
+}
+
+
+
+
+/* purpose: To make Account detail table*/
+.tb-Account-Detail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.td-labelColumnOfAccountDetail
+{
+	width: 60%;
+	text-align: right;
+	padding-right: 5px;
+	font-weight:bold;
+}
+
+.td-SingleColumnOfAccountDetail
+{
+	text-align: left;
+	width: 40%;
+}
+
+
+
+
+/* purpose: To make four column detail page */
+.tb-FourColumnDetail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.tr-FourColumnDetail
+{
+}
+.td-labelColumnOfFourColumn
+{
+	width: 25%;
+	text-align: right;
+	font-weight: bold;
+	color: #585858;
+}
+.td-SingleColumnOfFourColumn
+{
+	width: 25%;
+}
+.td-DoubleColumnOfFourColumn
+{
+	width: 50%;
+}
+.td-TrippleColumnOfFourColumn
+{
+	width: 75%;
+}
+.td-QuadColumnOfFourColumn
+{
+	width: 100%;
+}
+.txt-FullTrippleCol
+{
+	width: 100%;
+}
+.txt-FullDualCol
+{
+	width: 100%;
+}
+.txt-FullSingleCol
+{
+	width: 100%;
+}
+.cbo-FullTrippleCol
+{
+	width: 100%;
+}
+.cbo-FullDualCol
+{
+	width: 100%;
+}
+.cbo-FullSingleCol
+{
+	width: 100px;
+}
+.td-requiredField
+{
+	width: 7px;
+	text-align: center;
+}
+
+/* purpose: To make six column detail page */
+
+.tb-SixColumnDetail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.tr-SixColumnDetail
+{
+}
+.td-newButtonColumnOfSixColumn
+{
+	width: 3%;
+	text-align: left;
+}
+.td-SingleColumnOfSixColumn
+{
+	width: 25%;
+}
+.td-QuadColumnOfSixColumn
+{
+	width: 75%;
+}
+.tb-SixColumnDetail
+{
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.tr-SixColumnDetail
+{
+}
+.td-labelColumnOfSixColumn
+{
+	width: 22%;
+	text-align: right;
+	font-weight: bold;
+}
+.td-labelColumnOfSixColumnTenPercent
+{
+	width: 10%;
+	text-align: right;
+	font-weight: bold;
+}
+
+.td-labelColumnOfSixColumnCentPx
+{
+	width: 4%;
+	text-align: right;
+	font-weight: bold;
+}
+
+
+.td-newButtonColumnOfSixColumn
+{
+	width: 3%;
+	text-align: left;
+}
+.td-SingleColumnOfSixColumn
+{
+	width: 25%;
+}
+.td-QuadColumnOfSixColumn
+{
+	width: 75%;
+}
+
+.td-FiveColumnOfSixColumn
+{
+	width: 78%;
+}
+
+.td-SixColumnOfSixColumn
+{
+	width: 100%;
+}
+
+
+.PopupPageTitle
+{
+	background-image: url(../../Images/MenuBackground.png);
+	width: 100%;
+	text-align: left;
+	height: 34px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	padding-left: 10px;
+	color: white;
+}
+
+#menuBar
+{
+	background-image: url(../../Images/MenuBackground.png);
+	width: 100%;
+	text-align: left;
+	height: 20px;
+}
+#menuBar td
+{
+	text-align: center;
+	vertical-align: middle;
+	height: 34px;
+}
+#menuBar a
+{
+	color: White;
+	text-decoration: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+
+#menuBar a:hover
+{
+	color: #FBEB80;
+	text-decoration: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+#menuBar div
+{
+	padding-bottom: 5px;
+}
+
+
+.menuSeparator
+{
+	background-image: url(../../Images/MenuSeparator.png);
+	text-align: center;
+	width: 14px;
+	height: 34;
+}
+
+.XTabActiveButtonCell
+{
+	border-left: solid 1px #557da4;
+	border-top: solid 1px #557da4;
+	background-image: url(../../Images/TabControl/ActiveTab.jpg);
+	height: 22px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.XTabActiveButton
+{
+	color: black;
+	font-family: tahoma;
+	font-size: 9pt;
+	cursor: pointer;
+}
+.XTabActivePanel
+{
+	width: 100%;
+}
+.XTabInactiveButton
+{
+	font-size: 9pt;
+	color: black;
+	font-family: tahoma;
+	height: 22px;
+	cursor: pointer;
+}
+.XTabInactiveButtonCell
+{
+	border-left: solid 1px #c4c5c6;
+	border-top: solid 1px #c4c5c6;
+	background-image: url(../../Images/TabControl/InactiveButtonBack20_.gif);
+	height: 22px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.XTabInactivePanel
+{
+	width: 100%;
+	display: none;
+}
+
+
+.XTabEndSapceButtonCell
+{
+	border-left: solid 1px #c4c5c6;
+	background-color: #F5F5F5; /*background-color: #F4F9E9;*/
+	height: 22px;
+}
+.XTabButtonRow
+{
+	height: 22px;
+	width: 100%;
+	background-color: #ffffff;
+}
+.XTabLineRow
+{
+	height: 10px;
+	width: 100%;
+	background-color: #97B55A;
+}
+
+.XTabPageCell
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	border-top: solid 1px #91B4C5;
+	border-bottom: solid 1px #91B4C5;
+	border-left: solid 1px #91B4C5;
+	border-right: solid 1px #91B4C5;
+}
+
+.errorMessage
+{
+	color: #C90202;
+	font-weight: bold;
+}
+.successMessage
+{
+	color: #145E03;
+	font-weight: bold;
+}
+.infoMessage
+{
+	color: #00529B;
+	font-weight: bold;
+}
+.WarningMessage
+{
+	color: #1100B1;
+	font-weight: bold;
+}
+
+.td-SoundLikeSearch
+{
+	border-color: Green;
+	border-width: 1px;
+	border-style: solid;
+}
+.td-StraightSearch
+{
+	border-color: blue;
+	border-width: 1px;
+	border-style: solid;
+}
+.image_btn
+{
+	background-image: url(Button.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: verdana;
+	font-weight: bold;
+	width: 82px;
+	height: 30px;
+	border: 0px;
+	padding: 0px;
+	height: 40px;
+	margin: 0px;
+}
+
+
+.hiddenControl
+{
+	visibility: hidden;
+	display: none;
+}
+
+.requiredFieldMessage
+{
+	color: Red;
+}
+
+.td-MessageRow
+{
+	height: 20px;
+	padding-left: 5px;
+}
+
+.EmptyRow
+{
+	height: 5px;
+}
+
+.OnePixBottomBorder
+{
+	border-bottom: solid 1px #BFCFFE;
+}
+
+.PageLastUpdate
+{
+	color: #F0D56B;
+	
+	width:300px;
+	text-align:right;
+}
+
+.PageUserName
+{
+	width: 400px;
+	text-align:right;
+	padding-right:8px;
+}
+
+.LinkTable
+{
+	
+}
+	
+.LinkTable td
+{
+	padding-left:0px;
+	padding-right:0px;
+	border-width:0px;
+}
+
+.ControlLabel
+{
+	font-weight:bold;
+	}
+
+
+/*Start-Jquery Theme Custome Script*/
+.toggler
+{
+	width: 100%;
+	height: 200px;
+	position: relative;
+}
+#button
+{
+	padding: .5em 1em;
+	text-decoration: none;
+}
+#effect
+{
+	height: 50px;
+	padding: 0.4em;
+	position: relative;
+}
+#effect h3
+{
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+#effect .title
+{
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+}
+.button
+{
+	padding: .3em .5em;
+	text-decoration: none;
+}
+
+.ui-effects-transfer
+{
+	border: 2px dotted gray;
+}
+.fg-button
+{
+	outline: 0;
+	margin: 0 4px 0 0;
+	padding: .4em 1em;
+	text-decoration: none !important;
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+	zoom: 1;
+}
+
+/*End-Jquery Theme Custome Script*/
+
+.asterisk
+{
+	color: red;	
+	padding: 1px 3px 1px 5px;
+}
+
+.ValidationSummary
+{
+	color: #C90202;
+	border: 1px solid red;
+	color: red;
+	margin: 5px 0px 5px 5px;
+	padding: 4px;
+	background: #ffffff url(../../Images/error4.jpg) no-repeat 2px 50%;
+}
+
+.ValidationSummary ul
+{
+	margin: 0;
+	padding: 0;
+	margin-left: 70px;
+	list-style: square;
+}
+
+.calendarLabel
+{
+	color: #C90202;
+	border: 1px solid #669988;
+	color: Black;
+	height: 12px;	
+	padding: 4px 10px 4px 10px;	
+	margin: 4px 0px 4px 10px;	
+}
+
+.buttonMedium
+{		
+	color: White;
+	font-size: 12px;
+	font-family: verdana;
+	font-weight: bold; 
+	border: solid 0px black;
+	padding: 2px 4px 4px 4px;
+	width: 60px;
+	height: 22px;
+	background-color: RED;
+}
+.searchDiv
+{		
+	border: solid 1px #669988;
+	border-top:solid 0px #669988;
+}
