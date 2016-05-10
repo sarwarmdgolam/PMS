@@ -18,7 +18,7 @@ namespace BLL
             String Query = @"SP_INSERT_CDBL_CORPORATE_ACTION_RECEIVABLE_MANUALLY";
             try
             {
-                SqlParameter[] objList = new SqlParameter[11];
+                SqlParameter[] objList = new SqlParameter[12];
                 objList[0] = new SqlParameter("@COMPANY_ID", TypeCasting.ToInt32(oParams["COMPANY_ID"]));
                 objList[1] = new SqlParameter("@CORPORATE_ACTION_TYPE_ID", TypeCasting.ToInt32(oParams["CORPORATE_ACTION_TYPE_ID"]));
                 objList[2] = new SqlParameter("@RECORD_DATE", TypeCasting.ToDateTime(oParams["RECORD_DATE"]));
@@ -30,6 +30,7 @@ namespace BLL
                 objList[8] = new SqlParameter("@REMARKS", oParams["REMARKS"]);
                 objList[9] = new SqlParameter("@CREATED_BY", "99");
                 objList[10] = new SqlParameter("@PUF_RATIO", TypeCasting.ToDecimal(oParams["PUF_RATIO"]));
+                objList[11] = new SqlParameter("@UNIT_PRICE", TypeCasting.ToDecimal(oParams["UNIT_PRICE"]));
 
                 DatabaseManager DatabaseManager = new DatabaseManager();
                 CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, true, CommandType.StoredProcedure);
