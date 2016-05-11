@@ -49,8 +49,20 @@
             <tr>
                 <td>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True"
-                        PageSize="20" EmptyDataText="No data found." CssClass="mGrid">
+                        PageSize="20" EmptyDataText="No data found." CssClass="mGrid"  OnRowDataBound="GridView1_RowDataBound" DataKeyNames="ID">
                         <Columns>
+                         <asp:TemplateField ItemStyle-Width="50px" >
+                                <HeaderTemplate>
+                                    Select
+                                    <asp:CheckBox ID="chk_Select_All" runat="server" AutoPostBack="true" OnCheckedChanged="chk_Select_All_CheckedChanged" /><br />
+                                </HeaderTemplate>
+                                <ItemStyle HorizontalAlign="Center" />
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chk_Select_Single" runat="server" /><br />
+                                </ItemTemplate>
+                                <FooterStyle HorizontalAlign="Center" />
+                                
+                            </asp:TemplateField>
                             <asp:BoundField DataField="TYPE_F_NAME" HeaderText="CA Type" />
                             <asp:BoundField DataField="INSTRUMENT_NAME" HeaderText="Security Code" />
                             <asp:BoundField DataField="INVESTOR_CODE" HeaderText="Investor Code" />
@@ -76,7 +88,7 @@
                 <asp:Button ID="btn_Save" runat="server" Text="Save" OnClick="btn_Save_Click" />
             </td>
             <td>
-                <asp:Button ID="btn_Approve" runat="server" Text="Approve" OnClick="btn_Approve_Click" OnClientClick="return confirm('Are you sure to delete this record?')" />
+                <asp:Button ID="btn_Approve" runat="server" Text="Approve" OnClick="btn_Approve_Click" />
             </td>
             <td>
                 <asp:Button ID="btn_Refresh" runat="server" Text="Refresh" OnClick="btn_Refresh_Click" />
