@@ -43,17 +43,19 @@ namespace BLL
             return CResult;
         }
 
-        public CResult InsertCorporateActionFromHoldings(Dictionary<String, String> oParams)
+         public CResult InsertCorporateActionFromHoldings(Dictionary<String, String> oParams)
         {
             CResult CResult = new CResult();
             String Query = @"SP_INSERT_CDBL_CORPORATE_ACTION_RECEIVABLE_FROM_HOLDINGS";
             try
             {
-                SqlParameter[] objList = new SqlParameter[4];
+                SqlParameter[] objList = new SqlParameter[5];                
                 objList[0] = new SqlParameter("@COMPANY_ID", TypeCasting.ToInt32(oParams["COMPANY_ID"]));
                 objList[1] = new SqlParameter("@CORPORATE_ACTION_TYPE_ID", TypeCasting.ToInt32(oParams["CORPORATE_ACTION_TYPE_ID"]));
                 objList[2] = new SqlParameter("@RECORD_DATE", TypeCasting.ToDateTime(oParams["RECORD_DATE"]));
                 objList[3] = new SqlParameter("@CREATED_BY", "99");
+                objList[4] = new SqlParameter("@INVESTOR_ID", TypeCasting.ToInt32(oParams["INVESTOR_ID"]));
+                
 
                 DatabaseManager DatabaseManager = new DatabaseManager();
                 CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, true, CommandType.StoredProcedure);
