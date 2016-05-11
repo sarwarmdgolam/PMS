@@ -84,9 +84,13 @@ public partial class CDBLFileManagement_ApproveCAManagement : System.Web.UI.Page
             if (IsApprove.Checked)
             {
                 strInvList.Append(GridView1.DataKeys[i++].Value.ToString());
+                strInvList.Append(",");
             }
         }
-        return strInvList.ToString();
+        if (String.IsNullOrEmpty(strInvList.ToString()))
+            return strInvList.ToString();
+        else
+            return strInvList.ToString().Remove(strInvList.Length - 1, 1);
     }
 
     private bool ValidateEntityInsertion()
