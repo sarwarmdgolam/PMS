@@ -76,6 +76,7 @@ public partial class CDBLFileManagement_ApproveCAManagement : System.Web.UI.Page
 
     private String GetSelectedInvestorCode()
     {
+        int i = 0;
         StringBuilder strInvList = new StringBuilder();
         foreach (GridViewRow oRow in GridView1.Rows)
         {
