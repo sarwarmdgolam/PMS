@@ -70,9 +70,24 @@ public partial class CDBLFileManagement_ApproveCAManagement : System.Web.UI.Page
         obj.Add("COMPANY_ID", ddlCompany.SelectedValue);
         obj.Add("CORPORATE_ACTION_TYPE_ID", ddlActionType.SelectedValue);
         obj.Add("RECORD_DATE", txtRecordDate.Text);
+        obj.Add("INVESTOR_ID", GetSelectedInvestorCode());
         return obj;
     }
-    
+
+    private String GetSelectedInvestorCode()
+    {
+        StringBuilder strInvList = new StringBuilder();
+        foreach (GridViewRow oRow in GridView1.Rows)
+        {
+            CheckBox IsApprove = (CheckBox)oRow.Cells[0].FindControl("chk_Select_Single");
+            if (IsApprove.Checked)
+            {
+                strInvList.Append(GridView1.DataKeys[i++].Value.ToString());
+            }
+        }
+        return strInvList.ToString();
+    }
+
     private bool ValidateEntityInsertion()
     {
         if (!Page.IsValid) return false;
@@ -201,4 +216,11 @@ public partial class CDBLFileManagement_ApproveCAManagement : System.Web.UI.Page
         }
     }
 
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (ddlActionType.SelectedItem.Text == "RIGHT")
+            e.Row.Cells[0].Visible = true;
+        else
+            e.Row.Cells[0].Visible = false;
+    }
 }
