@@ -43,19 +43,70 @@ namespace BLL
             return CResult;
         }
 
-          public CResult InsertCorporateActionFromHoldings(Dictionary<String, String> oParams)
+        public CResult UpdateCorporateAction(Dictionary<String, String> oParams)
+        {
+            CResult CResult = new CResult();
+            String Query = @"[SP_UPDATE_CDBL_CORPORATE_ACTION_RECEIVABLE_MANUALLY]";
+            try
+            {
+                SqlParameter[] objList = new SqlParameter[13];
+                objList[0] = new SqlParameter("@COMPANY_ID", TypeCasting.ToInt32(oParams["COMPANY_ID"]));
+                objList[1] = new SqlParameter("@CORPORATE_ACTION_TYPE_ID", TypeCasting.ToInt32(oParams["CORPORATE_ACTION_TYPE_ID"]));
+                objList[2] = new SqlParameter("@RECORD_DATE", TypeCasting.ToDateTime(oParams["RECORD_DATE"]));
+                objList[3] = new SqlParameter("@EFFECTIVE_DATE", TypeCasting.ToDateTime(oParams["EFFECTIVE_DATE"]));
+                objList[4] = new SqlParameter("@PAR_RATIO", TypeCasting.ToDecimal(oParams["PAR_RATIO"]));
+                objList[5] = new SqlParameter("@BEN_RATIO", TypeCasting.ToDecimal(oParams["BEN_RATIO"]));
+                objList[6] = new SqlParameter("@DEBIT_CREDIT", oParams["DEBIT_CREDIT"]);
+                objList[7] = new SqlParameter("@TRANSACTION_DATE", TypeCasting.ToDateTime(oParams["TRANSACTION_DATE"]));
+                objList[8] = new SqlParameter("@REMARKS", oParams["REMARKS"]);
+                objList[9] = new SqlParameter("@CREATED_BY", "99");
+                objList[10] = new SqlParameter("@PUF_RATIO", TypeCasting.ToDecimal(oParams["PUF_RATIO"]));
+                objList[11] = new SqlParameter("@UNIT_PRICE", TypeCasting.ToDecimal(oParams["UNIT_PRICE"]));
+                objList[12] = new SqlParameter("@ID", TypeCasting.ToInt32(oParams["ID"]));
+
+                DatabaseManager DatabaseManager = new DatabaseManager();
+                CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, true, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                CResult.IsSuccess = false;
+                CResult.Message = ex.Message;
+            }
+            return CResult;
+        }
+
+        public CResult DeleteCorporateAction(String ID)
+        {
+            CResult CResult = new CResult();
+            String Query = @"[SP_DELETE_CDBL_CORPORATE_ACTION_RECEIVABLE_MANUALLY]";
+            try
+            {
+                SqlParameter[] objList = new SqlParameter[2];
+                objList[0] = new SqlParameter("@ID", TypeCasting.ToInt32(ID));
+                objList[1] = new SqlParameter("@CREATED_BY", "99");
+
+                DatabaseManager DatabaseManager = new DatabaseManager();
+                CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, true, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                CResult.IsSuccess = false;
+                CResult.Message = ex.Message;
+            }
+            return CResult;
+        }
+
+        public CResult InsertCorporateActionFromHoldings(Dictionary<String, String> oParams)
         {
             CResult CResult = new CResult();
             String Query = @"SP_INSERT_CDBL_CORPORATE_ACTION_RECEIVABLE_FROM_HOLDINGS";
             try
             {
-                SqlParameter[] objList = new SqlParameter[5];                
+                SqlParameter[] objList = new SqlParameter[4];
                 objList[0] = new SqlParameter("@COMPANY_ID", TypeCasting.ToInt32(oParams["COMPANY_ID"]));
                 objList[1] = new SqlParameter("@CORPORATE_ACTION_TYPE_ID", TypeCasting.ToInt32(oParams["CORPORATE_ACTION_TYPE_ID"]));
                 objList[2] = new SqlParameter("@RECORD_DATE", TypeCasting.ToDateTime(oParams["RECORD_DATE"]));
                 objList[3] = new SqlParameter("@CREATED_BY", "99");
-                objList[4] = new SqlParameter("@INVESTOR_ID", oParams["INVESTOR_ID"]);
-                
 
                 DatabaseManager DatabaseManager = new DatabaseManager();
                 CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, true, CommandType.StoredProcedure);
@@ -169,10 +220,11 @@ namespace BLL
 
             try
             {
-                SqlParameter[] objList = new SqlParameter[3];
+                SqlParameter[] objList = new SqlParameter[4];
                 objList[0] = new SqlParameter("@COMPANY_ID", TypeCasting.ToInt64(oParams["COMPANY_ID"]));
                 objList[1] = new SqlParameter("@CORPORATE_ACTION_TYPE_ID", TypeCasting.ToInt16(oParams["CORPORATE_ACTION_TYPE_ID"]));
                 objList[2] = new SqlParameter("@RECORD_DATE", TypeCasting.ToDateTime(oParams["RECORD_DATE"]));
+                objList[3] = new SqlParameter("@ID", TypeCasting.ToInt32(oParams["ID"]));
 
                 DatabaseManager DatabaseManager = new DatabaseManager();
                 CResult = DatabaseManager.ExecuteSQLQuery(Query, objList, false, CommandType.StoredProcedure);
