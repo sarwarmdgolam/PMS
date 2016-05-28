@@ -31,13 +31,20 @@ public partial class CDBLFileManagement_CorporateActionManagementList : System.W
         {
            txtTransactionDate.Text = txtRecordDate.Text = TypeCasting.DateToString(Util.SystemDate());
            GetDropDownControlData();
-            GetCorporateAction();
+           GetCorporateAction();
 
-           String ID = Request.QueryString["ID"];
-           if (!String.IsNullOrEmpty(ID))
+           String Action = Request.QueryString["Action"];
+
+           if (Action == "Delete")
            {
-               GetCorporateAction();
+               String ID = Request.QueryString["ID"];
+               if (!String.IsNullOrEmpty(ID))
+               {
+                   DeleteCorporateAction(ID);
+               }
            }
+
+           
                      
         }
     }
@@ -63,6 +70,7 @@ public partial class CDBLFileManagement_CorporateActionManagementList : System.W
         obj.Add("COMPANY_ID", ddlCompany.SelectedValue);
         obj.Add("CORPORATE_ACTION_TYPE_ID", ddlActionType.SelectedValue);
         obj.Add("RECORD_DATE", txtRecordDate.Text);
+        obj.Add("ID", "0");
         return obj;
     }
 
@@ -84,6 +92,35 @@ public partial class CDBLFileManagement_CorporateActionManagementList : System.W
         }
     }
 
+    private bool ValidateEntityDelete(String ID)
+    {
+        if (String.IsNullOrEmpty(ID))
+        {
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Warning, "No item found to delete.");
+            return false;
+        }
+        return true;
+
+    }
+
+    private void DeleteCorporateAction(String ID)
+    {
+        if (!ValidateEntityDelete(ID)) return;
+
+        BLLCorporateActionManagement BLLCorporateActionManagement = new BLLCorporateActionManagement();
+        CResult CResult = new CResult();
+        CResult = BLLCorporateActionManagement.DeleteCorporateAction(ID);
+
+        if (CResult.AffectedRows > 0)
+        {
+            GetCorporateAction();
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Informaiton, "Successfully Deleted.");
+        }
+        else
+        {
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Error, CResult.Message);
+        }
+    }
 
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
@@ -91,16 +128,16 @@ public partial class CDBLFileManagement_CorporateActionManagementList : System.W
         {
             DataRowView drv = (DataRowView)e.Row.DataItem;
 
-            if (this.Page_Update)
+            if (this.Page_Update &&  drv["IS_USED"].ToString() == "0")
             {
                 e.Row.Cells[3].Text = "<img src='../Images/Icon/icon_edit_small.png' align='absbottom' /> <a href='CorporateActionManagement.aspx?ID=" + drv["ID"].ToString() + "'>Edit</a>";
             }
             else
                 e.Row.Cells[3].Text = "&nbsp;";
 
-            if (this.Page_Delete)
+            if (this.Page_Delete && drv["IS_USED"].ToString() == "0")
             {
-                e.Row.Cells[4].Text = "<img src='../Images/Icon/icon_delete_small.png' align='absbottom' /> <a href='Cash_Chq_Collection_List.aspx?Action=Delete&ID=" + drv["ID"].ToString() + "' onclick='return confirm(\"Are you sure to delete this record?\")'>Delete</a>";
+                e.Row.Cells[4].Text = "<img src='../Images/Icon/icon_delete_small.png' align='absbottom' /> <a href='CorporateActionManagementList.aspx?Action=Delete&ID=" + drv["ID"].ToString() + "' onclick='return confirm(\"Are you sure to delete this record?\")'>Delete</a>";
             }
             else
                 e.Row.Cells[4].Text = "&nbsp;";
@@ -113,6 +150,6 @@ public partial class CDBLFileManagement_CorporateActionManagementList : System.W
     }
     protected void btn_Clear_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("CorporateActionManagementList.aspx");
     }
 }
