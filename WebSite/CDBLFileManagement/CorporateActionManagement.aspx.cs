@@ -71,6 +71,7 @@ public partial class CDBLFileManagement_CorporateActionManagement : System.Web.U
         obj.Add("DEBIT_CREDIT", ddlDebitCredit.SelectedValue);
         obj.Add("TRANSACTION_DATE", txtTransactionDate.Text);
         obj.Add("REMARKS", txtRemarks.Text);
+        obj.Add("UNIT_PRICE", txtRate.Text);
         return obj;
     }
 
@@ -86,12 +87,25 @@ public partial class CDBLFileManagement_CorporateActionManagement : System.Web.U
         ddlDebitCredit.SelectedValue = dr["DEBIT_CREDIT"].ToString();
         txtTransactionDate.Text = dr["TRANSACTION_DATE"].ToString();
         txtRemarks.Text = dr["REMARKS"].ToString();
+        txtRate.Text = dr["UNIT_PRICE"].ToString();
     }
 
     private bool ValidateEntityInsertion()
     {
         if (!Page.IsValid) return false;
         return true;
+    }
+
+    private bool ValidateEntityUpdate()
+    {
+        if (!Page.IsValid) return false;
+        if (String.IsNullOrEmpty(hdnID.Value))
+        {
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Warning, "No item found to update.");
+            return false;
+        }
+        return true;
+
     }
 
     private void PageOperationMode(Common.ApplicationEnums.UIOperationMode Mode)
@@ -138,6 +152,25 @@ public partial class CDBLFileManagement_CorporateActionManagement : System.Web.U
         }
     }
 
+    private void UpdateCorporateAction()
+    {
+        if (!ValidateEntityUpdate()) return;
+
+        BLLCorporateActionManagement BLLCorporateActionManagement = new BLLCorporateActionManagement();
+        CResult CResult = new CResult();
+        CResult = BLLCorporateActionManagement.UpdateCorporateAction(GetEntityValues());
+
+        if (CResult.AffectedRows > 0)
+        {
+            PageOperationMode(Common.ApplicationEnums.UIOperationMode.REFRESH);
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Informaiton, "Successfully Updated.");
+        }
+        else
+        {
+            (this.Master as MasterPage_Default).ShowApplicationMessage(ApplicationEnums.ApplicationMessageType.Error, CResult.Message);
+        }
+    }
+
     private void GetCorporateAction()
     {
         BLLCorporateActionManagement BLLCorporateActionManagement = new BLLCorporateActionManagement();
@@ -161,11 +194,11 @@ public partial class CDBLFileManagement_CorporateActionManagement : System.Web.U
 
     protected void btn_Update_Click(object sender, EventArgs e)
     {
-
+        UpdateCorporateAction();
     }
 
     protected void btn_Clear_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("CorporateActionManagement.aspx");
     }
 }
